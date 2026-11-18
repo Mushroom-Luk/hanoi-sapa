@@ -259,7 +259,9 @@ const bookSections = booking
     const rows = g.items
       .map((i, k) => {
         const id = `c${g.day}-${k}`;
-        const chip = i.kind === 'book' ? `<span class="lead" data-lead="${i.lead}">${esc(LEAD(i.lead))}</span>` : '<span class="lead"></span>';
+        const chip = i.kind === 'book'
+          ? `<span class="lead" data-lead="${i.lead}"${i.url ? ` data-url="${i.url}"` : ''}>${esc(LEAD(i.lead))}</span>`
+          : '<span class="lead"></span>';
         return (
           `        <li><input type="checkbox" id="${id}" data-k="${id}">` +
           `<span class="label"><span class="kind">${esc(KIND[i.kind] || '要訂')}</span>` +

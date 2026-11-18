@@ -759,6 +759,13 @@ em { font-style: italic; }
   .booklist .lead { grid-column: 2; padding: 2px 0 0; color: var(--muted); }
 }
 .lead.now { color: var(--rust); font-weight: 600; }
+.lead.now a {
+  color: var(--rust);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.lead.now a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.lead.now--todo { color: var(--muted); font-weight: 400; opacity: .55; }
 .urgent dt.now {
   display: inline-block;
   color: #fff;

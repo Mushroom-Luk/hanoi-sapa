@@ -283,7 +283,13 @@ export const booking = [
     wd: 'MON',
     title: '上船',
     items: [
-      { label: '下龍灣／蘭夏灣 2 日 1 夜郵輪', lead: 21, kind: 'book', note: '最搶手。要問清楚落船時間（11:00 前）同碼頭位置。' },
+      {
+        label: '下龍灣／蘭夏灣 2 日 1 夜郵輪',
+        lead: 21,
+        kind: 'book',
+        note: '最搶手。要問清楚落船時間（11:00 前）同碼頭位置。Diana Cruises 官網 · HK$2,550.29 / 2 人。',
+        url: 'https://dianacruises.com/booking/?date=2026-11-23&nights=1&adults=2&children-age=&access-code=',
+      },
     ],
   },
   {
@@ -291,8 +297,8 @@ export const booking = [
     wd: 'TUE',
     title: '落船，直上沙壩',
     items: [
-      { label: 'Daiichi Travel 直達巴士 13:00', lead: 7, kind: 'book', note: '8.5 小時、0 轉車、HK$305。確認係真直達，唔好訂 G8 12:30 嗰班。' },
-      { label: '沙壩酒店 3 晚（鎮中心）', lead: 21, kind: 'book', note: '行得到石教堂同夜市。' },
+      { label: 'Daiichi Travel 直達巴士 13:00', lead: 7, kind: 'book', note: '8.5 小時、0 轉車、HK$305。確認係真直達，唔好訂 G8 12:30 嗰班。', url: 'https://12go.asia/en/travel/halong/sapa?date=2026-11-24' },
+      { label: '沙壩酒店 3 晚（鎮中心）', lead: 21, kind: 'book', note: '行得到石教堂同夜市。', url: 'https://www.booking.com/searchresults.html?ss=Sa%20Pa&checkin=2026-11-24&checkout=2026-11-27&group_adults=2&no_rooms=1' },
     ],
   },
   {
@@ -300,7 +306,7 @@ export const booking = [
     wd: 'WED',
     title: '梯田行山',
     items: [
-      { label: '行山團 Y Linh Hồ–Lao Chải–Tả Van', lead: 7, kind: 'book', note: 'GYG，HK$161，免費取消。' },
+      { label: '行山團 Y Linh Hồ–Lao Chải–Tả Van', lead: 7, kind: 'book', note: 'GYG，HK$161，免費取消。', url: 'https://www.getyourguide.com/sa-pa-l1049/sapa-y-linh-ho-lao-chai-and-ta-van-villages-trek-day-tour-t1046047/?date_from=2026-11-25' },
     ],
   },
   {
@@ -308,7 +314,7 @@ export const booking = [
     wd: 'THU',
     title: '山頂與村落',
     items: [
-      { label: '番西邦纜車', lead: 0, kind: 'do', note: '唔好預訂死。當朝睇天氣先決定，大霧就改行村。' },
+      { label: '番西邦纜車', lead: 0, kind: 'book', note: '唔好預訂死。當朝睇天氣先決定，大霧就改行村。去到現場或者即日網上買。', url: 'https://www.klook.com/zh-HK/search/result/?query=Fansipan%20%E7%BA%9C%E8%BB%8A' },
     ],
   },
   {
@@ -316,9 +322,9 @@ export const booking = [
     wd: 'FRI',
     title: '包車，然後落山',
     items: [
-      { label: '沙壩包車 8 小時（80 km）', lead: 1, kind: 'book', note: 'Klook HK$113 起，或者同酒店訂。講明 16:00 要返到鎮。' },
-      { label: '老街 → 河內 夜火車 21:30', lead: 14, kind: 'book', note: '軟臥四人房揀下鋪；想私人空間就訂 2 人房（約 US$255–350／房）。' },
-      { label: '沙壩 → 老街站接駁', lead: 1, kind: 'book', note: '30 km 山路，45–60 分鐘。19:15 出發。' },
+      { label: '沙壩包車 8 小時（80 km）', lead: 1, kind: 'book', note: 'Klook HK$113 起，或者同酒店訂。講明 16:00 要返到鎮。', url: 'https://www.klook.com/zh-HK/activity/215993-custom-private-tour-sapa-day-tour-with-english-speaking-driver/' },
+      { label: '老街 → 河內 夜火車 21:30', lead: 14, kind: 'book', note: '軟臥四人房揀下鋪；想私人空間就訂 2 人房（約 US$255–350／房）。', url: 'https://12go.asia/en/travel/lao-cai/hanoi?date=2026-11-27' },
+      { label: '沙壩 → 老街站接駁', lead: 1, kind: 'book', note: '30 km 山路，45–60 分鐘。19:15 出發。', url: 'https://12go.asia/en/travel/sapa/lao-cai?date=2026-11-27' },
     ],
   },
   {

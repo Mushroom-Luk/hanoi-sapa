@@ -53,8 +53,14 @@
       } else if (need > 0) {
         el.textContent = need + ' 日內';
       } else {
-        el.textContent = '即訂';
-        el.classList.add('now');
+        var url = el.getAttribute('data-url');
+        if (url) {
+          el.innerHTML = '<a href="' + url + '" target="_blank" rel="noopener">即訂</a>';
+          el.classList.add('now');
+        } else {
+          el.textContent = '即訂';
+          el.classList.add('now', 'now--todo');
+        }
       }
     });
   }
