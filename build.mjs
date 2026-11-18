@@ -1,11 +1,17 @@
 // 靜態網站生成器：node build.mjs
 // 改 content/site.mjs 之後跑一次，就會重新出 index.html / day-N.html / book.html。
 
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, cpSync, rmSync, mkdirSync, readdirSync } from 'node:fs';
 import { trip, days, booking, hanoi2 } from './content/site.mjs';
 import { images, credits } from './content/images.mjs';
 
 const SITE = '河內 · 下龍灣 · 沙壩';
+const MON = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+const dayDate = (n) => {
+  const start = new Date((trip.start || '2026-11-22') + 'T00:00:00');
+  const d = new Date(start.getTime() + (n - 1) * 86400000);
+  return `${d.getDate()} ${MON[d.getMonth()]}`;
+};
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 const navItems = [
@@ -74,7 +80,7 @@ const dayRows = days
     (d) => `      <a class="dayrow" href="day-${d.n}.html">
         <span class="dayrow__n">${String(d.n).padStart(2, '0')}</span>
         <span class="dayrow__body">
-          <span class="meta">${d.wd} · ${esc(d.place.split(' · ').pop())}</span>
+          <span class="meta">${d.wd} ${dayDate(d.n)} · ${esc(d.place.split(' · ').pop())}</span>
           <h3>${esc(d.title)}</h3>
           <p>${esc(d.lead.split('。')[0])}。</p>
         </span>
@@ -201,7 +207,7 @@ function dayPage(d) {
   const nextLabel = next ? next.title : '預訂清單';
 
   return `      <header class="phead">
-        <p class="eyebrow eyebrow--rust">Day ${String(d.n).padStart(2, '0')} · ${d.wd}</p>
+        <p class="eyebrow eyebrow--rust">Day ${String(d.n).padStart(2, '0')} · ${d.wd} ${dayDate(d.n)}</p>
         <h1>${esc(d.title)}</h1>
         <p class="place">${esc(d.place)}</p>
       </header>
@@ -654,3 +660,12 @@ writeFileSync('book.html', page({ active: 'book.html', title: '預訂清單', bo
 writeFileSync('hanoi-2day.html', page({ active: 'hanoi-2day.html', title: '河內 2 日', body: hanoiBody }), 'utf8');
 
 console.log(`built ${days.length + 3} pages`);
+
+/* ---------------- dist（部署用） ---------------- */
+
+const htmlFiles = readdirSync('.').filter((f) => f.endsWith('.html'));
+rmSync('dist', { recursive: true, force: true });
+mkdirSync('dist', { recursive: true });
+for (const f of htmlFiles) cpSync(f, `dist/${f}`);
+cpSync('assets', 'dist/assets', { recursive: true });
+console.log(`dist: ${htmlFiles.length} pages`);

@@ -5,7 +5,7 @@ export const trip = {
   title: '河內 · 下龍灣 · 沙壩',
   lat: 'Hanoi · Ha Long · Sa Pa',
   lede: '八日七夜，三個地方。先落老城區，出海一晚，然後直上沙壩留三日，最後夜火車返城趕早機。',
-  dates: '11 月 22 – 29 日（暫定）',
+  dates: '2026 年 11 月 22 – 29 日',
   start: '2026-11-22',
   summary: [
     ['行程長度', '7 夜 8 日'],
@@ -261,8 +261,19 @@ export const booking = [
     wd: 'BEFORE',
     title: '出發前',
     items: [
-      { label: '去程機票 HKG → HAN（香港航空 HX）', lead: 60, kind: 'book', note: '11 月 22 日。官網揀單程 HKG → HAN，11/22。', url: 'https://www.hongkongairlines.com/portal/en_HK/homepage' },
-      { label: '回程機票 HAN → HKG（越南航空 VN）', lead: 21, kind: 'book', note: '11 月 29 日星期日早上。同去程分開訂單。', url: 'https://www.vietnamairlines.com/hk/zh-tw/' },
+      {
+        label: '去程 UO 540 · HKG → HAN（HK Express）',
+        lead: 60,
+        kind: 'book',
+        note: '11 月 22 日（日）07:35 香港 → 08:50 河內 · A320neo · 2 小時 15 分 · 81 kg CO2e（−21%）。',
+        url: 'https://www.hkexpress.com/zh-hk/',
+      },
+      {
+        label: '回程 9G 530 · HAN → HKG（Sun Phu Quoc Airways）',
+        lead: 21,
+        kind: 'book',
+        note: '11 月 29 日（日）08:55 河內 → 11:55 香港 · A321neo · 2 小時 · 74 kg CO2e（−26%）。同去程分開訂單。',
+      },
       { label: '越南 e-visa', lead: 10, kind: 'book', note: 'evisa.gov.vn，US$25 單次，3–7 工作天。香港特區護照冇免簽。' },
       { label: '旅遊保險', lead: 14, kind: 'book', note: '要包行山、玻璃橋同摩托車意外。' },
       { label: 'eSIM 或落地 SIM', lead: 3, kind: 'pack', note: '' },

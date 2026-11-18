@@ -5,3 +5,7 @@ desktop.ini
 
 # OpenCode local
 .opencode/*.local.*
+
+dist/
+
+notion/
