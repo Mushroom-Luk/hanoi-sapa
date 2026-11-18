@@ -743,7 +743,7 @@ em { font-style: italic; }
   margin-right: 8px;
   vertical-align: 1px;
 }
-.booklist .note-txt { display: block; font-size: 13px; color: var(--muted); margin-top: 3px; }
+.booklist .note-txt { display: block; font-size: 13px; line-height: 1.75; color: var(--muted); margin-top: 3px; }
 .booklist .note-txt a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
 .booklist .note-txt a:hover { color: var(--rust); border-bottom-color: var(--rust); }
 .booklist .lead {
