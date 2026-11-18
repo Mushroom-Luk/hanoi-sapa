@@ -17,8 +17,8 @@
   - `assets/img/`：3 張 Wikimedia 相片
 - [x] 舊單頁版已刪（git 有紀錄，可還原）
 - [x] `serve.mjs`：本機預覽，正確 MIME（port 8766）
-- [x] **河內 2 日頁**：`hanoi-2day.html`（導航 08），9 個 tab（點揀 / A / B / C / 食 / 飲 / 住 / 景點池 / 來源），52 個 Google Maps 連結 + 6 個 embed 地圖；資料放 `content/site.mjs` 的 `hanoi2`
-- [x] **43 張相**：`fetch-images.mjs` 由 Wikimedia Commons 抓 480px 縮圖 → `assets/img/hanoi/`，授權寫入 `content/images.mjs`，逐張列在「來源」tab
+- [x] **河內 2 日頁**：`hanoi-2day.html`（導航 2D），10 個 tab（點揀 / A / B / C / 食 / 飲 / 住 / 法餐 / 景點池 / 來源），52 個 Google Maps 連結 + 6 個 embed 地圖；資料放 `content/site.mjs` 的 `hanoi2`
+- [x] **49 張相**：`fetch-images.mjs` 由 Wikimedia Commons 抓 480px 縮圖 → `assets/img/hanoi/`，授權寫入 `content/images.mjs`，逐張列在「來源」tab
 - [x] **住**：Booking 評分核對 3 間（La Siesta 9.7 / Emerald Waters 9.5 / Buffalo 8.8）
 
 - [x] **沙壩段改成 Plan A（3 個獨立日，唔用 2日1夜）**

@@ -6,6 +6,7 @@ export const trip = {
   lat: 'Hanoi · Ha Long · Sa Pa',
   lede: '八日七夜，三個地方。先落老城區，出海一晚，然後直上沙壩留三日，最後夜火車返城趕早機。',
   dates: '11 月 22 – 29 日（暫定）',
+  start: '2026-11-22',
   summary: [
     ['行程長度', '7 夜 8 日'],
     ['地點', '3 個'],
@@ -231,15 +232,113 @@ export const days = [
       { kind: 'warn', k: '星期日早機', v: '08:00 起飛即係 06:00 到機場、05:10 由老城區出發。前一晚唔好過十一點。' },
     ],
   },
+  {
+    n: 8,
+    wd: 'SUN',
+    title: '返程',
+    place: 'Hà Nội → 香港',
+    lead: '冇行程。起身、上車、走。前一晚執好行李，唔好留到清晨。',
+    img: 'hanoi',
+    facts: [
+      ['出門口', '05:10'],
+      ['到機場', '06:00'],
+      ['起飛', '08:00'],
+    ],
+    rows: [
+      ['05:10', '酒店大堂上車', '預約接送，唔好靠清晨 Grab。'],
+      ['06:00', '內排國際機場（NIA）', '國際線櫃位排隊預 20–30 分鐘。'],
+      ['08:00', '起飛', ''],
+    ],
+    notes: [],
+  },
 ];
 
+/* 預訂清單：day 0 = 出發前。lead = 出發前幾多日要訂好。 */
+
 export const booking = [
-  ['下龍灣／蘭夏灣 2 日 1 夜郵輪', '提前 2–3 星期', '最搶手。訂之前問清楚落船時間同碼頭位置。'],
-  ['下龍灣 → 沙壩 直達巴士（13:00）', '提前 1 星期', 'Daiichi Travel。必須確認係直達、唔經河內。'],
-  ['沙壩行山團（星期三）', '提前 1 星期', 'GYG Y Linh Hồ–Lao Chải–Tả Van，HK$161，免費取消。'],
-  ['老街 → 河內 夜火車', '提前 1–2 星期', 'Lào Cai 開 21:30 左右。軟臥四人房，揀下鋪。'],
-  ['沙壩包車 8 小時（星期五）', '抵達當晚', '同酒店訂，比網上平。講明 16:00 要返到鎮。'],
-  ['河內酒店 2 晚 + 沙壩酒店 3 晚', '提前 2–4 星期', '河內揀老城區，沙壩揀鎮中心行得到石教堂。'],
+  {
+    day: 0,
+    wd: 'BEFORE',
+    title: '出發前',
+    items: [
+      { label: '來回機票 HKG ↔ HAN', lead: 60, kind: 'book', note: '11 月 22 日去、29 日走，越早訂越平。' },
+      { label: '越南 e-visa', lead: 10, kind: 'book', note: 'evisa.gov.vn，US$25 單次，3–7 工作天。香港特區護照冇免簽。' },
+      { label: '旅遊保險', lead: 14, kind: 'book', note: '要包行山、玻璃橋同摩托車意外。' },
+      { label: 'eSIM 或落地 SIM', lead: 3, kind: 'pack', note: '' },
+      { label: 'Grab app + 信用卡', lead: 3, kind: 'pack', note: '落地即刻叫得車。' },
+      { label: '現金 VND（市區金店兌）', lead: 0, kind: 'pack', note: '機場匯率差 2–3%。' },
+    ],
+  },
+  {
+    day: 1,
+    wd: 'SUN',
+    title: '抵達河內',
+    items: [
+      { label: '機場 → 老城區接送', lead: 2, kind: 'book', note: '比現場叫車穩陣，行李多就更值。' },
+      { label: '河內酒店 1 晚（老城區）', lead: 21, kind: 'book', note: 'La Siesta / Emerald Waters / Buffalo，見「河內 2 日」頁。' },
+    ],
+  },
+  {
+    day: 2,
+    wd: 'MON',
+    title: '上船',
+    items: [
+      { label: '下龍灣／蘭夏灣 2 日 1 夜郵輪', lead: 21, kind: 'book', note: '最搶手。要問清楚落船時間（11:00 前）同碼頭位置。' },
+    ],
+  },
+  {
+    day: 3,
+    wd: 'TUE',
+    title: '落船，直上沙壩',
+    items: [
+      { label: 'Daiichi Travel 直達巴士 13:00', lead: 7, kind: 'book', note: '8.5 小時、0 轉車、HK$305。確認係真直達，唔好訂 G8 12:30 嗰班。' },
+      { label: '沙壩酒店 3 晚（鎮中心）', lead: 21, kind: 'book', note: '行得到石教堂同夜市。' },
+    ],
+  },
+  {
+    day: 4,
+    wd: 'WED',
+    title: '梯田行山',
+    items: [
+      { label: '行山團 Y Linh Hồ–Lao Chải–Tả Van', lead: 7, kind: 'book', note: 'GYG，HK$161，免費取消。' },
+    ],
+  },
+  {
+    day: 5,
+    wd: 'THU',
+    title: '山頂與村落',
+    items: [
+      { label: '番西邦纜車', lead: 0, kind: 'do', note: '唔好預訂死。當朝睇天氣先決定，大霧就改行村。' },
+    ],
+  },
+  {
+    day: 6,
+    wd: 'FRI',
+    title: '包車，然後落山',
+    items: [
+      { label: '沙壩包車 8 小時（80 km）', lead: 1, kind: 'book', note: 'Klook HK$113 起，或者同酒店訂。講明 16:00 要返到鎮。' },
+      { label: '老街 → 河內 夜火車 21:30', lead: 14, kind: 'book', note: '軟臥四人房揀下鋪；想私人空間就訂 2 人房（約 US$255–350／房）。' },
+      { label: '沙壩 → 老街站接駁', lead: 1, kind: 'book', note: '30 km 山路，45–60 分鐘。19:15 出發。' },
+    ],
+  },
+  {
+    day: 7,
+    wd: 'SAT',
+    title: '河內最後一日',
+    items: [
+      { label: '河內火車站 → 酒店接送', lead: 2, kind: 'book', note: '05:30 落車，預先叫定。' },
+      { label: '河內酒店 1 晚 + early check-in', lead: 21, kind: 'book', note: '訂房時註明 06:00 到，要即刻入房沖涼。' },
+      { label: '水上木偶戲 18:30', lead: 3, kind: 'book', note: 'Thăng Long 劇院，買前排。' },
+    ],
+  },
+  {
+    day: 8,
+    wd: 'SUN',
+    title: '返程',
+    items: [
+      { label: '酒店 → 機場接送 05:10', lead: 2, kind: 'book', note: '清晨難叫 Grab，一定要預約。' },
+    ],
+  },
 ];
 
 /* ============================================================
@@ -502,6 +601,69 @@ export const hanoi2 = {
       price: 'HK$90 – 200 / 床',
       why: '有泳池、酒吧、24 小時接待。想識人、想慳錢就揀呢隻。',
       map: M('Hanoi Buffalo Hostel'),
+    },
+  ],
+
+  french: [
+    {
+      name: 'Maison Vie',
+      area: '28 Tăng Bạt Hổ · 法國區',
+      tier: 'Fine dining',
+      price: '晚餐 3 道 855,000₫（HK$270）',
+      hours: '11:00–14:00、17:00–22:00',
+      why: '法籍廚師、新古典別墅、白枱布。晚餐 3 道菜已經有齊前菜主菜甜品，係全城最抵嘅「儀式感」。',
+      img: 'fr-foie',
+      map: M('Maison Vie 28 Tang Bat Ho Hanoi'),
+    },
+    {
+      name: 'Villa des Fleurs',
+      area: '95 Quán Thánh · 西湖邊',
+      tier: 'Fine dining',
+      price: '4 道 set 約 950,000₫（HK$300）',
+      hours: '07:30–23:00 每日',
+      why: '花園別墅，2025 年由 Sakal Phoeung 團隊接手。行完鎮國寺行 5 分鐘就到，最啱星期六晚。',
+      img: 'fr-creme',
+      map: M('Villa des Fleurs 95 Quan Thanh Hanoi'),
+    },
+    {
+      name: 'La Badiane',
+      area: '10 Nam Ngư · 老城邊',
+      tier: 'MICHELIN 入選',
+      price: '午餐 set 約 795,000₫；晚餐 1.2M 起',
+      hours: '11:30–14:00、18:00–21:30',
+      why: '法越 fusion，黑白格地板，MICHELIN 2026 名單。想食「有星味但未到星價」就呢間。',
+      img: 'fr-steak',
+      map: M('La Badiane 10 Nam Ngu Hanoi'),
+    },
+    {
+      name: 'La Table Hanoia',
+      area: '12 Lý Đạo Thành · Press Club 3 樓',
+      tier: 'Colonial dining',
+      price: '300,000 – 1,500,000₫',
+      hours: '11:00–14:00、18:00–22:00',
+      why: '法式技術＋越南食材，殖民地大堂。想食「環境多過驚喜」就揀呢度，近歌劇院。',
+      img: 'fr-onion',
+      map: M('La Table Hanoia Press Club Hanoi'),
+    },
+    {
+      name: 'Fabrik',
+      area: '16 Trần Vũ · Ba Đình',
+      tier: 'French bistro',
+      price: '200,000 – 1,500,000₫',
+      hours: '11:00–22:30，星期二休',
+      why: '法國人自己聚腳嘅 bistro。cassoulet、terrine、洋蔥湯，份量正常，唔會食完仲餓。',
+      img: 'fr-duck',
+      map: M('Fabrik 16 Tran Vu Hanoi'),
+    },
+    {
+      name: 'Colette',
+      area: '12 Lô Sư · 老城',
+      tier: 'Bistro + wine bar',
+      price: '150,000 – 350,000₫',
+      hours: '16:30–23:00，星期二至日',
+      why: '唔係 fine dining，但 32 款杯裝酒、蝸牛、韃靼牛肉、creme brûlée。想輕鬆飲酒食法國菜就呢間。',
+      img: 'fr-escargot',
+      map: M('Colette French Bistro 12 Lo Su Hanoi'),
     },
   ],
 

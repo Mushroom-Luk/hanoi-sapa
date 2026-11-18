@@ -11,7 +11,7 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const navItems = [
   { href: 'index.html', n: '00', label: '總覽' },
   ...days.map((d) => ({ href: `day-${d.n}.html`, n: String(d.n).padStart(2, '0'), label: d.title })),
-  { href: 'hanoi-2day.html', n: '08', label: '河內 2 日' },
+  { href: 'hanoi-2day.html', n: '2D', label: '河內 2 日' },
   { href: 'book.html', n: '09', label: '預訂清單' },
 ];
 
@@ -48,7 +48,7 @@ function page({ active, title, body }) {
 <meta name="description" content="${esc(trip.lede)}">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body data-start="${trip.start || ""}">
 <div class="shell">
   ${rail(active)}
   <main class="main">
@@ -83,8 +83,23 @@ const dayRows = days
   )
   .join('\n');
 
+const fmt = (n) => n.toLocaleString('en-US');
+const budgetSum = (() => {
+  let lo = 0;
+  let hi = 0;
+  for (const row of trip.budget) {
+    const parts = String(row[1])
+      .split(/[–-]/)
+      .map((s) => Number(String(s).replace(/[^0-9]/g, '')));
+    if (!parts.length || Number.isNaN(parts[0])) continue;
+    lo += parts[0];
+    hi += parts.length > 1 && parts[1] ? parts[1] : parts[0];
+  }
+  return 'HK$' + fmt(lo) + ' – ' + fmt(hi) + ' / 人';
+})();
+
 const strip = trip.summary
-  .map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
+  .map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(k === '預算' ? budgetSum : v)}</dd></div>`)
   .join('\n      ');
 
 const route = trip.route
@@ -144,7 +159,7 @@ ${risks}
           <tbody>
           ${budgetRows}
           </tbody>
-          <tfoot><tr><td>合計（未計機票）</td><td>3,100 – 5,000</td></tr></tfoot>
+          <tfoot><tr><td>合計（未計機票）</td><td>${esc(budgetSum)}</td></tr></tfoot>
         </table>
         <p class="eyebrow" style="margin-top:14px">${esc(trip.budgetNote)}</p>
       </section>
@@ -220,31 +235,68 @@ function dayPage(d) {
 
 /* ---------------- book ---------------- */
 
-const checkItems = booking
-  .map(
-    ([label, when, note], i) =>
-      `        <li><input type="checkbox" id="c${i}" data-k="${i}">` +
-      `<span class="label"><b style="font-weight:600">${esc(label)}</b><br>` +
-      `<span style="font-size:13.5px;color:var(--muted)">${esc(note)}</span></span>` +
-      `<span class="when">${esc(when)}</span></li>`
-  )
+const LEAD = (d) => {
+  if (d >= 30) return `−${Math.round(d / 30)} 個月`;
+  if (d >= 14 && d % 7 === 0) return `−${d / 7} 週`;
+  if (d === 1) return '抵達當晚';
+  if (d === 0) return '現場';
+  return `−${d} 日`;
+};
+
+const KIND = { book: '要訂', pack: '要帶', do: '要做' };
+
+const allItems = booking.flatMap((g) =>
+  g.items.filter((i) => i.kind === 'book').map((i) => ({ ...i, gw: g.wd }))
+);
+const urgent = [...allItems].sort((a, b) => b.lead - a.lead).slice(0, 3);
+
+const urgentStrip = urgent
+  .map((i) => `<div><dt data-lead="${i.lead}">${esc(LEAD(i.lead))}</dt><dd>${esc(i.label)}</dd></div>`)
+  .join('\n        ');
+
+const bookSections = booking
+  .map((g) => {
+    const rows = g.items
+      .map((i, k) => {
+        const id = `c${g.day}-${k}`;
+        const chip = i.kind === 'book' ? `<span class="lead" data-lead="${i.lead}">${esc(LEAD(i.lead))}</span>` : '<span class="lead"></span>';
+        return (
+          `        <li><input type="checkbox" id="${id}" data-k="${id}">` +
+          `<span class="label"><span class="kind">${esc(KIND[i.kind] || '要訂')}</span>` +
+          `<span class="txt">${esc(i.label)}</span>` +
+          (i.note ? `<span class="note-txt">${esc(i.note)}</span>` : '') +
+          `</span>${chip}</li>`
+        );
+      })
+      .join('\n');
+
+    return `      <section class="booksec">
+        <div class="booksec__head">
+          <span class="d">${g.day === 0 ? '00' : String(g.day).padStart(2, '0')}</span>
+          <h3>${esc(g.title)}</h3>
+          <span class="cnt">${esc(g.wd)}</span>
+        </div>
+        <ul class="booklist">
+${rows}
+        </ul>
+      </section>`;
+  })
   .join('\n');
 
 const bookBody = `      <header class="phead">
         <p class="eyebrow eyebrow--rust">Checklist</p>
         <h1>預訂清單</h1>
-        <p class="place">按落單先後排</p>
+        <p class="place">按日排 · 右邊係截止期</p>
       </header>
 
-      <p class="lede" style="margin:26px 0 34px;max-width:52ch;color:var(--ink-soft)">
-        郵輪最搶手，先訂。之後係兩程沙壩車——去程 13:30 嗰班好易滿。酒店可以最後。
-      </p>
+      <dl class="urgent">
+        ${urgentStrip}
+      </dl>
+      <p class="eyebrow" style="margin:12px 0 0">呢三樣最早期。訂唔到，後面全部要改。</p>
 
-      <ul class="check" id="checklist">
-${checkItems}
-      </ul>
+${bookSections}
 
-      <p class="eyebrow" style="margin-top:18px">勾選狀態存喺呢部機，唔會同步。</p>
+      <p class="eyebrow" style="margin-top:30px">勾選狀態存喺呢部機，唔會同步。</p>
 
       <nav class="pager">
         <a href="day-${days.length}.html"><span class="k">上一頁</span><span class="v">${esc(days[days.length - 1].title)}</span></a>
@@ -252,7 +304,7 @@ ${checkItems}
       </nav>
 
       <footer class="foot">
-        <span>Checklist</span>
+        <span>Checklist · ${allItems.length} 項要訂</span>
         <span>${esc(SITE)}</span>
       </footer>`;
 
@@ -429,6 +481,22 @@ const hStays = hanoi2.stays
   )
   .join('\n');
 
+const hFrench = hanoi2.french
+  .map(
+    (f) => `          <li>
+            <div class="cellmedia">
+              <img class="thumb" src="assets/img/hanoi/${images[f.img]}" alt="${esc(f.name)}" width="64" height="64" loading="lazy" decoding="async">
+              <div>
+                <b>${esc(f.name)}</b>
+                <span>${esc(f.area)} · ${esc(f.tier)}</span>
+                <span>${esc(f.why)}</span>
+                <span class="staymeta">${esc(f.price)} · ${esc(f.hours)} · <a class="mlink" href="${f.map}" target="_blank" rel="noopener">地圖 ↗</a></span>
+              </div>
+            </div>
+          </li>`
+  )
+  .join('\n');
+
 const hPanels = hanoi2.plans
   .map(
     (p) => `      <section class="panel" id="p-${p.id}" role="tabpanel" aria-labelledby="t-${p.id}" hidden>
@@ -472,6 +540,7 @@ const hanoiBody = `      <header class="phead">
         <button role="tab" id="t-food" aria-controls="p-food" aria-selected="false">食</button>
         <button role="tab" id="t-drink" aria-controls="p-drink" aria-selected="false">飲</button>
         <button role="tab" id="t-stay" aria-controls="p-stay" aria-selected="false">住</button>
+        <button role="tab" id="t-fr" aria-controls="p-fr" aria-selected="false">法餐</button>
         <button role="tab" id="t-places" aria-controls="p-places" aria-selected="false">景點池</button>
         <button role="tab" id="t-src" aria-controls="p-src" aria-selected="false">來源</button>
       </div>
@@ -523,6 +592,19 @@ ${hStays}
         <p class="eyebrow" style="margin-top:22px">
           <a class="mlink" href="https://www.booking.com/searchresults.html?ss=Hanoi%20Old%20Quarter&amp;nflt=review_score%3D90" target="_blank" rel="noopener">Booking.com：老城區 9 分以上 ↗</a>
         </p>
+      </section>
+
+      <section class="panel" id="p-fr" role="tabpanel" aria-labelledby="t-fr" hidden>
+        <h2>法餐</h2>
+        <p class="lede" style="margin:14px 0 18px">河內係全世界做「平價 fine dining」最抵嘅城市之一：法國技術，越南成本。你嘅日子係六、日，商業午餐多數只做平日，所以策略係食 <em>3 道菜晚餐</em>。</p>
+        <p class="eyebrow" style="margin:0 0 24px">價錢係 2026-11 網上資料，埋單加 5% service + 8–10% VAT；全部要訂位。</p>
+        <ul class="plainlist staylist">
+${hFrench}
+        </ul>
+        <div class="notes">
+          <div class="note"><strong>唔好做</strong>Wine pairing 1.4M–3M，貴過餐。散叫一杯 180k 左右就夠。麵包同水都會收錢，問清楚。</div>
+          <div class="note"><strong>最順路</strong>星期六行完鎮國寺／真武觀，行 5 分鐘到 Villa des Fleurs 食 18:30；或者 Grab 15 分鐘去 Maison Vie。</div>
+        </div>
       </section>
 
       <section class="panel" id="p-places" role="tabpanel" aria-labelledby="t-places" hidden>

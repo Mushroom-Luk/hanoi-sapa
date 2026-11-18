@@ -7,7 +7,7 @@
 <meta name="description" content="八日七夜，三個地方。先落老城區，出海一晚，然後直上沙壩留三日，最後夜火車返城趕早機。">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body data-start="2026-11-22">
 <div class="shell">
   <aside class="rail" id="rail">
       <a class="rail__mark" href="index.html">
@@ -23,11 +23,12 @@
         <li><a href="day-5.html"><span class="n">05</span><span>上番西邦</span></a></li>
         <li><a href="day-6.html"><span class="n">06</span><span>玻璃橋，然後落山</span></a></li>
         <li><a href="day-7.html"><span class="n">07</span><span>河內最後一日</span></a></li>
-        <li><a href="hanoi-2day.html" aria-current="page"><span class="n">08</span><span>河內 2 日</span></a></li>
+        <li><a href="day-8.html"><span class="n">08</span><span>返程</span></a></li>
+        <li><a href="hanoi-2day.html" aria-current="page"><span class="n">2D</span><span>河內 2 日</span></a></li>
         <li><a href="book.html"><span class="n">09</span><span>預訂清單</span></a></li>
       </ul>
       <div class="rail__foot">
-        7 日行程<br>
+        8 日行程<br>
         v2 · 2026-11-18
       </div>
     </aside>
@@ -61,6 +62,7 @@
         <button role="tab" id="t-food" aria-controls="p-food" aria-selected="false">食</button>
         <button role="tab" id="t-drink" aria-controls="p-drink" aria-selected="false">飲</button>
         <button role="tab" id="t-stay" aria-controls="p-stay" aria-selected="false">住</button>
+        <button role="tab" id="t-fr" aria-controls="p-fr" aria-selected="false">法餐</button>
         <button role="tab" id="t-places" aria-controls="p-places" aria-selected="false">景點池</button>
         <button role="tab" id="t-src" aria-controls="p-src" aria-selected="false">來源</button>
       </div>
@@ -276,6 +278,84 @@
         </p>
       </section>
 
+      <section class="panel" id="p-fr" role="tabpanel" aria-labelledby="t-fr" hidden>
+        <h2>法餐</h2>
+        <p class="lede" style="margin:14px 0 18px">河內係全世界做「平價 fine dining」最抵嘅城市之一：法國技術，越南成本。你嘅日子係六、日，商業午餐多數只做平日，所以策略係食 <em>3 道菜晚餐</em>。</p>
+        <p class="eyebrow" style="margin:0 0 24px">價錢係 2026-11 網上資料，埋單加 5% service + 8–10% VAT；全部要訂位。</p>
+        <ul class="plainlist staylist">
+          <li>
+            <div class="cellmedia">
+              <img class="thumb" src="assets/img/hanoi/fr-foie.jpg" alt="Maison Vie" width="64" height="64" loading="lazy" decoding="async">
+              <div>
+                <b>Maison Vie</b>
+                <span>28 Tăng Bạt Hổ · 法國區 · Fine dining</span>
+                <span>法籍廚師、新古典別墅、白枱布。晚餐 3 道菜已經有齊前菜主菜甜品，係全城最抵嘅「儀式感」。</span>
+                <span class="staymeta">晚餐 3 道 855,000₫（HK$270） · 11:00–14:00、17:00–22:00 · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Maison%20Vie%2028%20Tang%20Bat%20Ho%20Hanoi" target="_blank" rel="noopener">地圖 ↗</a></span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="cellmedia">
+              <img class="thumb" src="assets/img/hanoi/fr-creme.jpg" alt="Villa des Fleurs" width="64" height="64" loading="lazy" decoding="async">
+              <div>
+                <b>Villa des Fleurs</b>
+                <span>95 Quán Thánh · 西湖邊 · Fine dining</span>
+                <span>花園別墅，2025 年由 Sakal Phoeung 團隊接手。行完鎮國寺行 5 分鐘就到，最啱星期六晚。</span>
+                <span class="staymeta">4 道 set 約 950,000₫（HK$300） · 07:30–23:00 每日 · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Villa%20des%20Fleurs%2095%20Quan%20Thanh%20Hanoi" target="_blank" rel="noopener">地圖 ↗</a></span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="cellmedia">
+              <img class="thumb" src="assets/img/hanoi/fr-steak.jpg" alt="La Badiane" width="64" height="64" loading="lazy" decoding="async">
+              <div>
+                <b>La Badiane</b>
+                <span>10 Nam Ngư · 老城邊 · MICHELIN 入選</span>
+                <span>法越 fusion，黑白格地板，MICHELIN 2026 名單。想食「有星味但未到星價」就呢間。</span>
+                <span class="staymeta">午餐 set 約 795,000₫；晚餐 1.2M 起 · 11:30–14:00、18:00–21:30 · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=La%20Badiane%2010%20Nam%20Ngu%20Hanoi" target="_blank" rel="noopener">地圖 ↗</a></span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="cellmedia">
+              <img class="thumb" src="assets/img/hanoi/fr-onion.jpg" alt="La Table Hanoia" width="64" height="64" loading="lazy" decoding="async">
+              <div>
+                <b>La Table Hanoia</b>
+                <span>12 Lý Đạo Thành · Press Club 3 樓 · Colonial dining</span>
+                <span>法式技術＋越南食材，殖民地大堂。想食「環境多過驚喜」就揀呢度，近歌劇院。</span>
+                <span class="staymeta">300,000 – 1,500,000₫ · 11:00–14:00、18:00–22:00 · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=La%20Table%20Hanoia%20Press%20Club%20Hanoi" target="_blank" rel="noopener">地圖 ↗</a></span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="cellmedia">
+              <img class="thumb" src="assets/img/hanoi/fr-duck.jpg" alt="Fabrik" width="64" height="64" loading="lazy" decoding="async">
+              <div>
+                <b>Fabrik</b>
+                <span>16 Trần Vũ · Ba Đình · French bistro</span>
+                <span>法國人自己聚腳嘅 bistro。cassoulet、terrine、洋蔥湯，份量正常，唔會食完仲餓。</span>
+                <span class="staymeta">200,000 – 1,500,000₫ · 11:00–22:30，星期二休 · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Fabrik%2016%20Tran%20Vu%20Hanoi" target="_blank" rel="noopener">地圖 ↗</a></span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="cellmedia">
+              <img class="thumb" src="assets/img/hanoi/fr-escargot.jpg" alt="Colette" width="64" height="64" loading="lazy" decoding="async">
+              <div>
+                <b>Colette</b>
+                <span>12 Lô Sư · 老城 · Bistro + wine bar</span>
+                <span>唔係 fine dining，但 32 款杯裝酒、蝸牛、韃靼牛肉、creme brûlée。想輕鬆飲酒食法國菜就呢間。</span>
+                <span class="staymeta">150,000 – 350,000₫ · 16:30–23:00，星期二至日 · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Colette%20French%20Bistro%2012%20Lo%20Su%20Hanoi" target="_blank" rel="noopener">地圖 ↗</a></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="notes">
+          <div class="note"><strong>唔好做</strong>Wine pairing 1.4M–3M，貴過餐。散叫一杯 180k 左右就夠。麵包同水都會收錢，問清楚。</div>
+          <div class="note"><strong>最順路</strong>星期六行完鎮國寺／真武觀，行 5 分鐘到 Villa des Fleurs 食 18:30；或者 Grab 15 分鐘去 Maison Vie。</div>
+        </div>
+      </section>
+
       <section class="panel" id="p-places" role="tabpanel" aria-labelledby="t-places" hidden>
         <h2>景點池</h2>
         <p class="lede" style="margin:14px 0 28px">三組，自己揀。A 步行、B 搭車、C 避人。</p>
@@ -412,6 +492,12 @@
           <li><a href="https://commons.wikimedia.org/wiki/File:Bai_giua_song_Hong.jpg" target="_blank" rel="noopener">Bai giua song Hong.jpg</a><span>GV (thảo luận) · CC BY-SA 3.0</span></li>
           <li><a href="https://commons.wikimedia.org/wiki/File:Wall_of_sticky_note_are_seen_in_cafe.png" target="_blank" rel="noopener">Wall of sticky note are seen in cafe.png</a><span>New editing editor · CC BY-SA 4.0</span></li>
           <li><a href="https://commons.wikimedia.org/wiki/File:Vietnamese_Salted_Coffee_%26_Xin_chao's_coconut_Coffee_-_Xin_Chao%2C_Eastbourne_2026-08-14.jpg" target="_blank" rel="noopener">Vietnamese Salted Coffee &amp; Xin chao's coconut Coffee - Xin Chao, Eastbourne 2026-08-14.jpg</a><span>Andy Li · CC0</span></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Steak-frites_(steak-and-chips).jpg" target="_blank" rel="noopener">Steak-frites (steak-and-chips).jpg</a><span>Dcollard · CC BY-SA 3.0</span></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Foie_gras_en_cocotte.jpg" target="_blank" rel="noopener">Foie gras en cocotte.jpg</a><span>Charles Haynes from Bangalore, India · CC BY-SA 2.0</span></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Cr%C3%A8me_Br%C3%BBl%C3%A9e_with_Raspberries_and_Candle.JPG" target="_blank" rel="noopener">Crème Brûlée with Raspberries and Candle.JPG</a><span>Patrick Pelletier · CC BY-SA 4.0</span></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Soupe_%C3%A0_l'oignon.jpg" target="_blank" rel="noopener">Soupe à l'oignon.jpg</a><span>Ludovic Péron · CC BY-SA 3.0</span></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Burgundy_escargots%2C_garlic%2C_parsley%2C_butter.jpg" target="_blank" rel="noopener">Burgundy escargots, garlic, parsley, butter.jpg</a><span>T.Tseng · CC BY 2.0</span></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Confit_de_canard.jpg" target="_blank" rel="noopener">Confit de canard.jpg</a><span>Nikchick · CC BY-SA 2.0</span></li>
         </ul>
       </section>
 

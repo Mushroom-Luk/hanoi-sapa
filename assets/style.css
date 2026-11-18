@@ -676,3 +676,93 @@ em { font-style: italic; }
   .gmap iframe { display: none; }
   .gmap figcaption { margin-bottom: 10px; }
 }
+
+/* ---------- booking: day sections ---------- */
+
+.urgent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin: 30px 0 0;
+  border-top: 2px solid var(--rust);
+  border-bottom: 1px solid var(--rule);
+}
+.urgent div { padding: 14px 18px 16px 0; }
+.urgent dt {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 5px;
+}
+.urgent dd { margin: 0; font-size: 14.5px; line-height: 1.45; }
+
+.booksec { margin-top: 38px; border-top: 1px solid var(--ink); padding-top: 14px; }
+.booksec__head { display: flex; align-items: baseline; gap: 12px; }
+.booksec__head .d {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  color: var(--rust);
+}
+.booksec__head h3 { flex: 1; }
+.booksec__head .cnt {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.booklist { list-style: none; margin: 0; padding: 0; }
+.booklist li {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 15px;
+}
+.booklist input {
+  margin: 5px 0 0;
+  width: 15px;
+  height: 15px;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+.booklist .kind {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .1em;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1px 5px;
+  margin-right: 8px;
+  vertical-align: 1px;
+}
+.booklist .note-txt { display: block; font-size: 13px; color: var(--muted); margin-top: 3px; }
+.booklist .lead {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: var(--rust);
+  white-space: nowrap;
+  padding-top: 3px;
+}
+.booklist li.done .txt { text-decoration: line-through; color: var(--muted); }
+
+@media (max-width: 560px) {
+  .booklist li { grid-template-columns: 16px minmax(0, 1fr); }
+  .booklist .lead { grid-column: 2; padding: 2px 0 0; color: var(--muted); }
+}
+.lead.now { color: var(--rust); font-weight: 600; }
+.urgent dt.now {
+  display: inline-block;
+  color: #fff;
+  background: var(--rust);
+  padding: 1px 6px;
+  border-radius: 2px;
+}

@@ -42,7 +42,13 @@ export const images = {
   "cafe": "cafe.jpg",
   "xoi": "xoi.jpg",
   "banana-island": "banana-island.jpg",
-  "note-coffee": "note-coffee.png"
+  "note-coffee": "note-coffee.png",
+  "fr-steak": "fr-steak.jpg",
+  "fr-foie": "fr-foie.jpg",
+  "fr-escargot": "fr-escargot.jpg",
+  "fr-creme": "fr-creme.jpg",
+  "fr-duck": "fr-duck.jpg",
+  "fr-onion": "fr-onion.jpg"
 };
 
 export const credits = [
@@ -303,5 +309,41 @@ export const credits = [
     "title": "Vietnamese Salted Coffee & Xin chao's coconut Coffee - Xin Chao, Eastbourne 2026-08-14.jpg",
     "artist": "Andy Li",
     "license": "CC0"
+  },
+  {
+    "file": "fr-steak.jpg",
+    "title": "Steak-frites (steak-and-chips).jpg",
+    "artist": "Dcollard",
+    "license": "CC BY-SA 3.0"
+  },
+  {
+    "file": "fr-foie.jpg",
+    "title": "Foie gras en cocotte.jpg",
+    "artist": "Charles Haynes from Bangalore, India",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "file": "fr-creme.jpg",
+    "title": "Crème Brûlée with Raspberries and Candle.JPG",
+    "artist": "Patrick Pelletier",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "file": "fr-onion.jpg",
+    "title": "Soupe à l'oignon.jpg",
+    "artist": "Ludovic Péron",
+    "license": "CC BY-SA 3.0"
+  },
+  {
+    "file": "fr-escargot.jpg",
+    "title": "Burgundy escargots, garlic, parsley, butter.jpg",
+    "artist": "T.Tseng",
+    "license": "CC BY 2.0"
+  },
+  {
+    "file": "fr-duck.jpg",
+    "title": "Confit de canard.jpg",
+    "artist": "Nikchick",
+    "license": "CC BY-SA 2.0"
   }
 ];
