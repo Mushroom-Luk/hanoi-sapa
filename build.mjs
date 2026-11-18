@@ -611,7 +611,7 @@ ${hFrench}
         </ul>
         <div class="notes">
           <div class="note"><strong>唔好做</strong>Wine pairing 1.4M–3M，貴過餐。散叫一杯 180k 左右就夠。麵包同水都會收錢，問清楚。</div>
-          <div class="note"><strong>最順路</strong>星期六行完鎮國寺／真武觀，行 5 分鐘到 Villa des Fleurs 食 18:30；或者 Grab 15 分鐘去 Maison Vie。</div>
+          <div class="note"><strong>最順路</strong>星期六行完鎮國寺／真武觀，Grab 5 分鐘到 Fabrik 食 18:00；或者行 5 分鐘到 Villa des Fleurs。</div>
         </div>
       </section>
 
