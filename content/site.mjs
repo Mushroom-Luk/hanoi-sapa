@@ -261,7 +261,8 @@ export const booking = [
     wd: 'BEFORE',
     title: '出發前',
     items: [
-      { label: '來回機票 HKG ↔ HAN', lead: 60, kind: 'book', note: '11 月 22 日去、29 日走，越早訂越平。' },
+      { label: '去程機票 HKG → HAN（香港航空 HX）', lead: 60, kind: 'book', note: '11 月 22 日。官網揀單程 HKG → HAN，11/22。', url: 'https://www.hongkongairlines.com/portal/en_HK/homepage' },
+      { label: '回程機票 HAN → HKG（越南航空 VN）', lead: 21, kind: 'book', note: '11 月 29 日星期日早上。同去程分開訂單。', url: 'https://www.vietnamairlines.com/hk/zh-tw/' },
       { label: '越南 e-visa', lead: 10, kind: 'book', note: 'evisa.gov.vn，US$25 單次，3–7 工作天。香港特區護照冇免簽。' },
       { label: '旅遊保險', lead: 14, kind: 'book', note: '要包行山、玻璃橋同摩托車意外。' },
       { label: 'eSIM 或落地 SIM', lead: 3, kind: 'pack', note: '' },

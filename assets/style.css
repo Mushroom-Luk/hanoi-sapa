@@ -681,7 +681,7 @@ em { font-style: italic; }
 
 .urgent {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
   margin: 30px 0 0;
   border-top: 2px solid var(--rust);
   border-bottom: 1px solid var(--rule);

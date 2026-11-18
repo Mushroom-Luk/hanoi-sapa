@@ -248,7 +248,7 @@ const KIND = { book: '要訂', pack: '要帶', do: '要做' };
 const allItems = booking.flatMap((g) =>
   g.items.filter((i) => i.kind === 'book').map((i) => ({ ...i, gw: g.wd }))
 );
-const urgent = [...allItems].sort((a, b) => b.lead - a.lead).slice(0, 3);
+const urgent = [...allItems].sort((a, b) => b.lead - a.lead).slice(0, 4);
 
 const urgentStrip = urgent
   .map((i) => `<div><dt data-lead="${i.lead}">${esc(LEAD(i.lead))}</dt><dd>${esc(i.label)}</dd></div>`)
@@ -294,7 +294,7 @@ const bookBody = `      <header class="phead">
       <dl class="urgent">
         ${urgentStrip}
       </dl>
-      <p class="eyebrow" style="margin:12px 0 0">呢三樣最早期。訂唔到，後面全部要改。</p>
+      <p class="eyebrow" style="margin:12px 0 0">呢四樣最早期。訂唔到，後面全部要改。</p>
 
 ${bookSections}
 
