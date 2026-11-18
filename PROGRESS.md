@@ -17,6 +17,16 @@
   - `assets/img/`：3 張 Wikimedia 相片
 - [x] 舊單頁版已刪（git 有紀錄，可還原）
 - [x] `serve.mjs`：本機預覽，正確 MIME（port 8766）
+- [x] **河內 2 日頁**：`hanoi-2day.html`（導航 08），9 個 tab（點揀 / A / B / C / 食 / 飲 / 住 / 景點池 / 來源），52 個 Google Maps 連結 + 6 個 embed 地圖；資料放 `content/site.mjs` 的 `hanoi2`
+- [x] **43 張相**：`fetch-images.mjs` 由 Wikimedia Commons 抓 480px 縮圖 → `assets/img/hanoi/`，授權寫入 `content/images.mjs`，逐張列在「來源」tab
+- [x] **住**：Booking 評分核對 3 間（La Siesta 9.7 / Emerald Waters 9.5 / Buffalo 8.8）
+
+- [x] **沙壩段改成 Plan A（3 個獨立日，唔用 2日1夜）**
+  - Day 3 改直達：下龍灣 11:00 落船 → 13:00 Daiichi → 21:30 沙壩（0 轉車）
+  - Day 4 行山（Y Linh Hồ–Lao Chải–Tả Van）→ 貓貓村 → Moana → 夜市
+  - Day 5 番西邦（當朝望窗決定，可同 Day 6 對調）
+  - Day 6 包車 8h：銀瀑布 → 玻璃橋 → O Quy Ho → 19:15 去老街 → 夜火車
+  - `trip` 的 risks / budget / route 同步更新；`booking` 改成 6 項
 
 ## 進行中
 

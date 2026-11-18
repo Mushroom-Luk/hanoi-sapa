@@ -123,6 +123,9 @@
 | **Table** | 只有橫線 | 數字欄 tabular-nums，右對齊 |
 | **Checklist** | 原生 checkbox | 勾選用 `localStorage`，逐部機自己記 |
 | **Pager** | 左右兩格 | 最後一頁指向「預訂清單」 |
+| **Tabs**（河內 2 日） | 頂線 + 底線，選中用 `--rust` 2px 底線 | 只用喺同一頁分組；keyboard 左右箭嘴 |
+| **Thumb** | 64px 正方，跟文字左對齊 | 只喺表內；食物圖可以重複用同一道菜 |
+| **Map** | iframe 高 340（手機 260） | 必須有「開完整路線」連結，因為 iframe 會食 scroll |
 
 ---
 
@@ -151,8 +154,8 @@ Facts 用 `auto-fit minmax(150px, 1fr)`，所以 390px 手機會自動變兩欄�
 ## 9. Known gaps
 
 - 未有真實日期同航班時間，首頁寫「日期待定」。
-- 未接地圖。刻意唔用互動地圖：手機上會劫持 scroll。要路線就睇 `route` 那行文字。
-- 三張相係 Wikimedia Commons，正式出街前應補返授權標示同攝影師名。
+- 地圖用 Google Maps embed iframe（每個 Plan 一條路線、每個景點組一張區圖），`loading="lazy"`。手機上 iframe 會食 scroll，所以下面永遠有「開完整路線」連結。
+- 相片全部 Wikimedia Commons，480px 縮圖，授權逐張列在「來源」tab。正式出街前要再核一次授權字樣。
 - 未有分享用的 OG image。
 
 ---
