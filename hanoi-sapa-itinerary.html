@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>河內・下龍灣・沙壩｜8日7夜行程</title>
+<style>
+  :root{
+    --ink:#16262b;
+    --ink-soft:#3d5158;
+    --paper:#faf7f1;
+    --card:#ffffff;
+    --line:#e6ded2;
+    --accent:#b4472a;
+    --teal:#1f6f6b;
+    --gold:#c99a3f;
+    --muted:#7d8d92;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px 96px}
+  h1,h2,h3,.serif{font-family:"Songti TC","Noto Serif TC",Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:.01em}
+  a{color:var(--teal)}
+
+  /* ---------- hero ---------- */
+  header.hero{
+    background:linear-gradient(160deg,#12363a 0%,#1b4c4a 45%,#2a5c52 100%);
+    color:#f4efe6;
+    padding:64px 0 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute;inset:auto -10% -60% -10%;height:220px;
+    background:radial-gradient(ellipse at 30% 0%,rgba(201,154,63,.35),transparent 60%);
+    pointer-events:none;
+  }
+  header.hero .wrap{padding-bottom:0}
+  .eyebrow{
+    font-size:12px;letter-spacing:.24em;text-transform:uppercase;
+    color:#c9b48a;margin:0 0 18px;
+  }
+  header.hero h1{
+    font-size:clamp(30px,5.2vw,46px);
+    line-height:1.25;margin:0 0 14px;
+  }
+  header.hero p.lede{
+    margin:0;max-width:34em;color:#cfe0dc;font-size:15.5px;
+  }
+  .stats{
+    display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 0;padding:0;list-style:none;
+  }
+  .stats li{
+    border:1px solid rgba(244,239,230,.28);
+    border-radius:999px;padding:7px 16px;font-size:13.5px;color:#e8e2d6;
+    background:rgba(255,255,255,.05);
+  }
+  .stats b{color:#fff;font-weight:600}
+
+  /* ---------- sections ---------- */
+  section{padding-top:56px}
+  .sec-head{
+    display:flex;align-items:baseline;gap:14px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:10px;margin-bottom:26px;
+  }
+  .sec-head h2{font-size:22px;margin:0}
+  .sec-head .num{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:12px;color:var(--muted);letter-spacing:.06em;
+  }
+
+  /* ---------- grid table ---------- */
+  .grid-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+  table{border-collapse:collapse;width:100%;font-size:14px}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  thead th{
+    background:#f3ede3;font-weight:600;font-size:12.5px;letter-spacing:.06em;
+    color:var(--ink-soft);text-transform:uppercase;
+  }
+  tbody th{background:#fbf8f3;font-weight:600;font-size:12.5px;color:var(--muted);letter-spacing:.08em}
+  tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
+  td.dash{color:#c8c0b4}
+  .pill{
+    display:inline-block;padding:2px 9px;border-radius:6px;font-size:12.5px;font-weight:600;
+  }
+  .pill.cruise{background:#e2eef1;color:#1c5f6b}
+  .pill.sapa{background:#e9f0e4;color:#3f6b34}
+  .pill.hanoi{background:#f7e8e0;color:#9a4423}
+
+  /* ---------- day cards ---------- */
+  .day{
+    display:grid;grid-template-columns:112px 1fr;gap:0;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    margin-bottom:18px;overflow:hidden;
+  }
+  .day-rail{
+    background:#f6f1e8;padding:22px 16px;text-align:center;
+    border-right:1px solid var(--line);
+  }
+  .day-rail .d-num{
+    font-family:"Songti TC",Georgia,serif;font-size:30px;line-height:1;color:var(--accent);
+  }
+  .day-rail .d-wd{font-size:12px;letter-spacing:.14em;color:var(--muted);margin-top:8px;text-transform:uppercase}
+  .day-rail .d-icon{font-size:18px;margin-top:14px;opacity:.6}
+  .day-body{padding:22px 24px}
+  .day-body h3{margin:0 0 4px;font-size:18.5px}
+  .day-body .place{font-size:13px;color:var(--muted);margin:0 0 16px;letter-spacing:.02em}
+  .rows{list-style:none;margin:0;padding:0}
+  .rows li{
+    display:grid;grid-template-columns:86px 1fr;gap:14px;
+    padding:8px 0;border-top:1px dashed #ece4d8;font-size:14.5px;
+  }
+  .rows li:first-child{border-top:0}
+  .rows .t{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:12.5px;color:var(--muted);padding-top:3px;
+  }
+  .note{
+    margin:16px 0 0;padding:12px 14px;border-radius:10px;
+    background:#fdf6ea;border-left:3px solid var(--gold);
+    font-size:13.5px;color:#6d5525;
+  }
+  .note.warn{background:#fbeeea;border-left-color:var(--accent);color:#8a3a22}
+
+  /* ---------- checklist ---------- */
+  .check{list-style:none;margin:0;padding:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .check li{display:flex;gap:14px;align-items:flex-start;padding:15px 20px;border-top:1px solid var(--line);font-size:14.5px}
+  .check li:first-child{border-top:0}
+  .check input{margin-top:5px;width:17px;height:17px;accent-color:var(--teal);flex:0 0 auto;cursor:pointer}
+  .check .when{margin-left:auto;font-size:12px;color:var(--muted);white-space:nowrap;padding-top:2px}
+  .check li.done span.label{text-decoration:line-through;color:#9aa8ac}
+
+  /* ---------- risk ---------- */
+  .risks{display:grid;gap:14px}
+  .risk{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .risk .tag{
+    display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);background:#fbeae4;padding:3px 9px;border-radius:5px;margin-bottom:10px;
+  }
+  .risk h4{margin:0 0 6px;font-size:16px}
+  .risk p{margin:0;font-size:14px;color:var(--ink-soft)}
+
+  /* ---------- budget ---------- */
+  .budget{width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .budget td,.budget th{padding:12px 18px;font-size:14px}
+  .budget td:last-child,.budget th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+  .budget tfoot td{font-weight:700;background:#f6f1e8;font-size:15px;border-top:1px solid var(--line)}
+  .budget caption{caption-side:bottom;text-align:left;padding:10px 18px;font-size:12.5px;color:var(--muted)}
+
+  footer{
+    margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--muted);
+  }
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .toc a{
+    font-size:13px;text-decoration:none;color:var(--ink-soft);
+    border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;
+  }
+  .toc a:hover{border-color:var(--teal);color:var(--teal)}
+
+  @media (max-width:620px){
+    .wrap{padding:0 18px 72px}
+    .day{grid-template-columns:1fr}
+    .day-rail{display:flex;align-items:center;gap:14px;text-align:left;border-right:0;border-bottom:1px solid var(--line);padding:14px 20px}
+    .day-rail .d-num{font-size:24px}
+    .day-rail .d-wd{margin:0}
+    .day-rail .d-icon{margin:0 0 0 auto}
+    .day-body{padding:18px 20px}
+    .rows li{grid-template-columns:70px 1fr}
+    .check .when{display:none}
+  }
+  @media print{
+    body{background:#fff}
+    header.hero{background:#fff;color:#000;padding:0 0 24px}
+    header.hero p.lede,header.hero .eyebrow{color:#555}
+    .stats li{color:#333;border-color:#ccc}
+    .day,.risk,.check,.budget{break-inside:avoid}
+    .toc{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Vietnam · Itinerary v1</p>
+    <h1>河內 · 下龍灣 · 沙壩</h1>
+    <p class="lede">8 日 7 夜：先落老城區，落海，返陸，上山，最後返城。兩程夜車換三個地方。</p>
+    <ul class="stats">
+      <li><b>7</b> 日 7 夜</li>
+      <li><b>3</b> 個目的地</li>
+      <li><b>1</b> 程夜車</li>
+      <li>更新 <b>2026-11-18</b></li>
+    </ul>
+    <nav class="toc">
+      <a href="#grid">時間表</a>
+      <a href="#days">每日詳細</a>
+      <a href="#book">要 book 嘅嘢</a>
+      <a href="#risks">風險</a>
+      <a href="#budget">預算</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="grid">
+    <div class="sec-head"><span class="num">01</span><h2>原始時間表</h2></div>
+    <div class="grid-scroll">
+      <table>
+        <thead>
+          <tr><th></th><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>AM</th>
+            <td class="dash">—</td>
+            <td><span class="pill cruise">Cruise</span></td>
+            <td><span class="pill cruise">Cruise</span></td>
+            <td><span class="pill sapa">Sapa</span></td>
+            <td><span class="pill sapa">Sapa</span></td>
+            <td><span class="pill sapa">Sapa</span></td>
+            <td><span class="pill hanoi">Hanoi</span></td>
+          </tr>
+          <tr>
+            <th>PM</th>
+            <td><span class="pill hanoi">Hanoi</span></td>
+            <td><span class="pill cruise">Cruise</span></td>
+            <td><span class="pill sapa">ToSapa</span></td>
+            <td><span class="pill sapa">Sapa</span></td>
+            <td><span class="pill sapa">Sapa</span></td>
+            <td><span class="pill sapa">Sapa</span></td>
+            <td><span class="pill hanoi">Hanoi</span></td>
+          </tr>
+          <tr>
+            <th>Night</th>
+            <td><span class="pill hanoi">Hanoi</span></td>
+            <td><span class="pill cruise">Cruise</span></td>
+            <td><span class="pill sapa">Sapa</span></td>
+            <td><span class="pill sapa">Sapa</span></td>
+            <td><span class="pill sapa">Sapa</span></td>
+            <td><span class="pill sapa">ToHanoi</span></td>
+            <td><span class="pill hanoi">Hanoi</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">星期日 AM 空白，我當係抵達日。如果實際係星期六晚機、星期日凌晨到，成張表要順移一日。</p>
+  </section>
+
+  <section id="days">
+    <div class="sec-head"><span class="num">02</span><h2>每日詳細</h2></div>
+
+    <article class="day">
+      <div class="day-rail"><div class="d-num">01</div><div class="d-wd">Sun</div><div class="d-icon">✈</div></div>
+      <div class="day-body">
+        <h3>抵達河內</h3>
+        <p class="place">Hà Nội · 老城區 Phố cổ</p>
+        <ul class="rows">
+          <li><span class="t">上午</span><span>抵達內排國際機場（Sân bay Quốc tế Nội Bài，HAN），入境約 30–60 分鐘</span></li>
+          <li><span class="t">中午</span><span>機場 → 老城區：Grab 350,000–450,000 VND（HK$110–145），45–60 分鐘；慳錢搭 86 號巴士 45,000 VND</span></li>
+          <li><span class="t">下午</span><span>入住酒店，還劍湖（Hồ Hoàn Kiếm）行一圈，Ngọc Sơn 祠</span></li>
+          <li><span class="t">晚上</span><span>啤酒街（Phố Tạ Hiện），食 bún chả、phở</span></li>
+        </ul>
+        <p class="note">住老城區。第一晚唔好安排遠嘅行程，落地日永遠比預計慢。</p>
+      </div>
+    </article>
+
+    <article class="day">
+      <div class="day-rail"><div class="d-num">02</div><div class="d-wd">Mon</div><div class="d-icon">⛵</div></div>
+      <div class="day-body">
+        <h3>下龍灣郵輪（第 1 日）</h3>
+        <p class="place">Vịnh Hạ Long · 建議改行蘭夏灣 Vịnh Lan Hà</p>
+        <ul class="rows">
+          <li><span class="t">07:30</span><span>郵輪公司專車到老城區酒店接（多數已包）</span></li>
+          <li><span class="t">08:15</span><span>車程往下龍灣，中途停珍珠／手工藝休息站</span></li>
+          <li><span class="t">12:00</span><span>登船、午餐、分配艙房</span></li>
+          <li><span class="t">14:30</span><span>划獨木舟、游泳、探洞穴（驚訝洞 Hang Sửng Sốt 或 Luon Cave）</span></li>
+          <li><span class="t">18:00</span><span>日落、船上晚餐</span></li>
+          <li><span class="t">21:00</span><span>夜釣墨魚、甲板睇星</span></li>
+        </ul>
+        <p class="note">揀蘭夏灣航線：比主航道少人、水清。2 日 1 夜中檔約 US$120–200／人。</p>
+      </div>
+    </article>
+
+    <article class="day">
+      <div class="day-rail"><div class="d-num">03</div><div class="d-wd">Tue</div><div class="d-icon">🚌</div></div>
+      <div class="day-body">
+        <h3>落船 → 直接入沙壩</h3>
+        <p class="place">Vịnh Hạ Long → Sa Pa（經河內轉車）· 全日 9 小時移動</p>
+        <ul class="rows">
+          <li><span class="t">06:15</span><span>甲板太極／睇日出</span></li>
+          <li><span class="t">07:00</span><span>早餐、參觀浮村或最後一個景點</span></li>
+          <li><span class="t">09:00</span><span>落船（揀 09:00–09:30 返港嘅船，唔好揀 11:00 嗰啲）</span></li>
+          <li><span class="t">09:15</span><span>專車返河內老城區，約 2.5–3 小時，12:00–12:30 到</span></li>
+          <li><span class="t">13:30</span><span>Limousine 直奔沙壩（Sapa Express／HK Buslines／Green Lion），5.5 小時</span></li>
+          <li><span class="t">19:00</span><span>到沙壩，食晚飯、行夜市</span></li>
+        </ul>
+        <p class="note warn">13:30 係底線。遲過呢班，下一班係 22:00 臥鋪，又變返凌晨 4 點到。落船時間係整個行程嘅關鍵變數。</p>
+      </div>
+    </article>
+
+    <article class="day">
+      <div class="day-rail"><div class="d-num">04</div><div class="d-wd">Wed</div><div class="d-icon">⛰</div></div>
+      <div class="day-body">
+        <h3>沙壩村落</h3>
+        <p class="place">Sa Pa · Bản Cát Cát · Fansipan</p>
+        <ul class="rows">
+          <li><span class="t">08:30</span><span>貓貓村（Bản Cát Cát），黑苗 H'Mông 村落，入場 70,000–90,000 VND</span></li>
+          <li><span class="t">12:00</span><span>鎮上午餐</span></li>
+          <li><span class="t">13:30</span><span>番西邦峰（Fansipan，3,143m）纜車來回約 850,000 VND，山頂好凍要帶外套</span></li>
+          <li><span class="t">18:30</span><span>沙壩夜市、炭燒、熱紅酒</span></li>
+        </ul>
+        <p class="note">睡眠不足＋3,143 米＝唔舒服。如果前一晚夜車瞓得差，纜車改去第四日下午。</p>
+      </div>
+    </article>
+
+    <article class="day">
+      <div class="day-rail"><div class="d-num">05</div><div class="d-wd">Thu</div><div class="d-icon">🥾</div></div>
+      <div class="day-body">
+        <h3>梯田 + 少數民族</h3>
+        <p class="place">Thung lũng Mường Hoa · Lao Chải · Tả Van</p>
+        <ul class="rows">
+          <li><span class="t">08:00</span><span>全日 trek：Lao Chải → Tả Van，經過 H'Mông 同 Dzay 族村</span></li>
+          <li><span class="t">15:30</span><span>返鎮沖涼、咖啡</span></li>
+          <li><span class="t">傍晚</span><span>石教堂（Nhà thờ Đá Sa Pa）、沙壩湖</span></li>
+        </ul>
+        <p class="note">體力唔夠可換半日：銀瀑布（Thác Bạc）＋雲龍玻璃橋（Cầu Kính Rồng Mây）。</p>
+      </div>
+    </article>
+
+    <article class="day">
+      <div class="day-rail"><div class="d-num">06</div><div class="d-wd">Fri</div><div class="d-icon">🚌</div></div>
+      <div class="day-body">
+        <h3>沙壩 → 河內</h3>
+        <p class="place">Sa Pa → Hà Nội（夜車）</p>
+        <ul class="rows">
+          <li><span class="t">上午</span><span>自由：沙壩市集買手信、Hàm Rồng 觀景公園</span></li>
+          <li><span class="t">下午</span><span>執行李、按摩、早晚餐</span></li>
+          <li><span class="t">20:30</span><span>臥鋪夜巴返河內，約 5.5 小時</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="day">
+      <div class="day-rail"><div class="d-num">07</div><div class="d-wd">Sat</div><div class="d-icon">🏛</div></div>
+      <div class="day-body">
+        <h3>河內市內</h3>
+        <p class="place">Hà Nội · 巴亭 · 老城區</p>
+        <ul class="rows">
+          <li><span class="t">05:00</span><span>到河內，酒店寄存行李／問 early check-in</span></li>
+          <li><span class="t">08:00</span><span>胡志明陵（Lăng Chủ tịch Hồ Chí Minh，只開 08:00–11:00，逢一、五閉館）、一柱廟、文廟（Văn Miếu）</span></li>
+          <li><span class="t">12:00</span><span>午餐</span></li>
+          <li><span class="t">14:00</span><span>火車街（Train Street，要入 cafe 消費）、聖若瑟主教座堂（Nhà thờ Lớn）、還劍湖</span></li>
+          <li><span class="t">18:30</span><span>水上木偶戲（Múa rối nước Thăng Long），100,000–200,000 VND</span></li>
+          <li><span class="t">晚上</span><span>最後晚餐，老城區，住河內</span></li>
+        </ul>
+        <p class="note">星期日朝早機：08:00 起飛 → 06:00 到內排機場 → 05:10 由老城區出發。前一晚唔好飲到太夜。</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="book">
+    <div class="sec-head"><span class="num">03</span><h2>要 book 嘅嘢</h2></div>
+    <ul class="check" id="checklist">
+      <li><input type="checkbox" id="c1"><span class="label">下龍灣／蘭夏灣 2日1夜郵輪</span><span class="when">提前 2–3 星期</span></li>
+      <li><input type="checkbox" id="c2"><span class="label">沙壩夜巴 × 2（去 + 回）</span><span class="when">提前 1 星期</span></li>
+      <li><input type="checkbox" id="c3"><span class="label">河內酒店 × 3 晚 + 沙壩酒店 × 2 晚</span><span class="when">提前 2–4 星期</span></li>
+      <li><input type="checkbox" id="c4"><span class="label">番西邦纜車票</span><span class="when">提前 2–3 日</span></li>
+      <li><input type="checkbox" id="c5"><span class="label">水上木偶戲 + 機場接送</span><span class="when">提前 2–3 日</span></li>
+    </ul>
+    <p class="note">勾選會存喺你部機（localStorage），唔會同步去第二部電腦。</p>
+  </section>
+
+  <section id="risks">
+    <div class="sec-head"><span class="num">04</span><h2>三個要改嘅位</h2></div>
+    <div class="risks">
+      <div class="risk">
+        <span class="tag">Risk 01</span>
+        <h4>星期二 9 小時移動</h4>
+        <p>落船 09:00 → 河內 12:30 → 13:30 車 → 沙壩 19:00。冇直接車，一定要經河內轉。中間只有 1 小時食飯同轉車，誤一班就變凌晨 4 點到。</p>
+      </div>
+      <div class="risk">
+        <span class="tag">Risk 02</span>
+        <h4>星期六會爆</h4>
+        <p>夜巴 05:00 到河內，胡志明陵只開上午而且逢一、五閉館。冇得遲，冇得改期。</p>
+      </div>
+      <div class="risk">
+        <span class="tag">Risk 03</span>
+        <h4>季節錯配</h4>
+        <p>11–2 月沙壩 5–15°C、大霧，番西邦山頂可能 0°C 以下。梯田 10 月已收割，會係泥黃色。想睇綠色梯田要 5–9 月。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="budget">
+    <div class="sec-head"><span class="num">05</span><h2>預算</h2></div>
+    <table class="budget">
+      <thead><tr><th>項目（每人，2 人同行）</th><th>HK$</th></tr></thead>
+      <tbody>
+        <tr><td>下龍灣 2日1夜郵輪</td><td>950 – 1,600</td></tr>
+        <tr><td>沙壩夜巴來回</td><td>190 – 290</td></tr>
+        <tr><td>河內酒店 3 晚</td><td>600 – 1,050</td></tr>
+        <tr><td>沙壩酒店 2 晚</td><td>300 – 600</td></tr>
+        <tr><td>番西邦纜車</td><td>270</td></tr>
+        <tr><td>食 + 市內交通</td><td>800 – 1,200</td></tr>
+      </tbody>
+      <tfoot><tr><td>合計（未計機票）</td><td>3,100 – 5,000</td></tr></tfoot>
+      <caption>價錢係大約數，落單前要喺 Klook / 當地平台核實。</caption>
+    </table>
+  </section>
+
+  <footer>
+    <p>初稿 v1 · 2026-11-18 · 未鎖實日期同航班</p>
+  </footer>
+
+</main>
+
+<script>
+  const KEY = 'hanoi-sapa-v1';
+  const boxes = [...document.querySelectorAll('#checklist input')];
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  boxes.forEach((box, i) => {
+    box.checked = !!saved[i];
+    box.closest('li').classList.toggle('done', box.checked);
+    box.addEventListener('change', () => {
+      saved[i] = box.checked;
+      box.closest('li').classList.toggle('done', box.checked);
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+</script>
+</body>
+</html>
