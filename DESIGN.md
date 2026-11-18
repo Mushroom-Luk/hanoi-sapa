@@ -58,9 +58,11 @@
 
 | 角色 | Stack | 用喺 |
 |---|---|---|
-| Display（襯線） | `Iowan Old Style, Palatino, Georgia, Songti TC, Noto Serif TC, PMingLiU` | h1/h2/h3、日號、摘要數值 |
-| Body（無襯線） | `-apple-system, Segoe UI, PingFang HK, Microsoft JhengHei` | 段落、列表、按鈕 |
+| Display（黑體） | `Noto Sans HK, Noto Sans TC, Microsoft JhengHei` 600 | h1/h2/h3、日號、摘要數值 |
+| Body（無襯線） | `Noto Sans HK, Noto Sans TC, -apple-system, PingFang HK` | 段落、列表、按鈕 |
 | Mono | `ui-monospace, SF Mono, Cascadia Mono, Menlo` | 時間、日期、eyebrow、註腳、token 式標籤 |
+
+**點解唔用襯線**：Windows 冇 `Songti TC`、冇 `Noto Serif TC`，襯線中文會 fallback 去 `PMingLiU`（新細明體），細字發虛、大字似標楷。改用 `Noto Sans HK` 600 做標題，筆畫實、邊緣清。要襯線就要 webfont（Google Fonts `Noto Serif TC`），見 `_design/type-c.html` 對照。
 
 **Scale**
 
