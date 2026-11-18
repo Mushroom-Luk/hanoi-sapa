@@ -169,6 +169,31 @@
   }
   .toc a:hover{border-color:var(--teal);color:var(--teal)}
 
+  /* ---------- sticky day nav ---------- */
+  .daynav{
+    position:sticky;top:0;z-index:30;
+    background:rgba(250,247,241,.94);
+    backdrop-filter:saturate(1.4) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .daynav .inner{
+    display:flex;gap:6px;overflow-x:auto;padding:10px 0;
+    scrollbar-width:none;
+  }
+  .daynav .inner::-webkit-scrollbar{display:none}
+  .daynav a{
+    flex:0 0 auto;text-decoration:none;
+    font-size:12.5px;letter-spacing:.04em;
+    color:var(--ink-soft);border:1px solid var(--line);
+    background:#fff;border-radius:8px;padding:6px 11px;
+    white-space:nowrap;
+  }
+  .daynav a b{font-family:ui-monospace,Menlo,monospace;color:var(--accent);margin-right:5px}
+  .daynav a:hover{border-color:var(--teal);color:var(--teal)}
+  .daynav a.top{margin-left:auto;border-color:transparent;background:transparent;color:var(--muted)}
+  article.day{scroll-margin-top:64px}
+  section{scroll-margin-top:64px}
+
   @media (max-width:620px){
     .wrap{padding:0 18px 72px}
     .day{grid-template-columns:1fr}
@@ -192,7 +217,7 @@
 </head>
 <body>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="wrap">
     <p class="eyebrow">Vietnam · Itinerary v1</p>
     <h1>河內 · 下龍灣 · 沙壩</h1>
@@ -212,6 +237,24 @@
     </nav>
   </div>
 </header>
+
+<nav class="daynav" aria-label="跳到某日">
+  <div class="wrap">
+    <div class="inner">
+      <a href="#d1"><b>01</b>日</a>
+      <a href="#d2"><b>02</b>一</a>
+      <a href="#d3"><b>03</b>二</a>
+      <a href="#d4"><b>04</b>三</a>
+      <a href="#d5"><b>05</b>四</a>
+      <a href="#d6"><b>06</b>五</a>
+      <a href="#d7"><b>07</b>六</a>
+      <a href="#book">要 book</a>
+      <a href="#risks">風險</a>
+      <a href="#budget">預算</a>
+      <a href="#top" class="top">↑ 頂</a>
+    </div>
+  </div>
+</nav>
 
 <main class="wrap">
 
@@ -262,7 +305,7 @@
   <section id="days">
     <div class="sec-head"><span class="num">02</span><h2>每日詳細</h2></div>
 
-    <article class="day">
+    <article class="day" id="d1">
       <div class="day-rail"><div class="d-num">01</div><div class="d-wd">Sun</div><div class="d-icon">✈</div></div>
       <div class="day-body">
         <h3>抵達河內</h3>
@@ -277,7 +320,7 @@
       </div>
     </article>
 
-    <article class="day">
+    <article class="day" id="d2">
       <div class="day-rail"><div class="d-num">02</div><div class="d-wd">Mon</div><div class="d-icon">⛵</div></div>
       <div class="day-body">
         <h3>下龍灣郵輪（第 1 日）</h3>
@@ -294,7 +337,7 @@
       </div>
     </article>
 
-    <article class="day">
+    <article class="day" id="d3">
       <div class="day-rail"><div class="d-num">03</div><div class="d-wd">Tue</div><div class="d-icon">🚌</div></div>
       <div class="day-body">
         <h3>落船 → 直接入沙壩</h3>
@@ -311,7 +354,7 @@
       </div>
     </article>
 
-    <article class="day">
+    <article class="day" id="d4">
       <div class="day-rail"><div class="d-num">04</div><div class="d-wd">Wed</div><div class="d-icon">⛰</div></div>
       <div class="day-body">
         <h3>沙壩村落</h3>
@@ -326,7 +369,7 @@
       </div>
     </article>
 
-    <article class="day">
+    <article class="day" id="d5">
       <div class="day-rail"><div class="d-num">05</div><div class="d-wd">Thu</div><div class="d-icon">🥾</div></div>
       <div class="day-body">
         <h3>梯田 + 少數民族</h3>
@@ -340,7 +383,7 @@
       </div>
     </article>
 
-    <article class="day">
+    <article class="day" id="d6">
       <div class="day-rail"><div class="d-num">06</div><div class="d-wd">Fri</div><div class="d-icon">🚌</div></div>
       <div class="day-body">
         <h3>沙壩 → 河內</h3>
@@ -353,7 +396,7 @@
       </div>
     </article>
 
-    <article class="day">
+    <article class="day" id="d7">
       <div class="day-rail"><div class="d-num">07</div><div class="d-wd">Sat</div><div class="d-icon">🏛</div></div>
       <div class="day-body">
         <h3>河內市內</h3>
