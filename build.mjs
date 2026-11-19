@@ -2,7 +2,7 @@
 // 改 content/site.mjs 之後跑一次，就會重新出 index.html / day-N.html / book.html。
 
 import { writeFileSync, cpSync, rmSync, mkdirSync, readdirSync } from 'node:fs';
-import { trip, days, booking, hanoi2 } from './content/site.mjs';
+import { trip, days, booking, hanoi2, paid } from './content/site.mjs';
 import { images, credits } from './content/images.mjs';
 
 const SITE = '河內 · 下龍灣 · 沙壩';
@@ -305,6 +305,19 @@ ${rows}
   })
   .join('\n');
 
+const paidTable = `      <section class="sect">
+        <div class="sect__head"><span class="n">01</span><h2>已訂／已付</h2></div>
+        <table class="table">
+          <thead><tr><th>項目</th><th>實際</th><th>狀態</th></tr></thead>
+          <tbody>
+${paid.map(([a, b, c]) => `          <tr><td>${esc(a)}</td><td>${esc(b)}</td><td>${esc(c)}</td></tr>`).join('\n')}
+          </tbody>
+        </table>
+        <p class="eyebrow" style="margin-top:14px">金額係訂單實數、二人同行；未列出嘅即係未訂。</p>
+      </section>
+
+`;
+
 const bookBody = `      <header class="phead">
         <p class="eyebrow eyebrow--rust">Checklist</p>
         <h1>預訂清單</h1>
@@ -316,6 +329,7 @@ const bookBody = `      <header class="phead">
       </dl>
       <p class="eyebrow" style="margin:12px 0 0">呢四樣最早期。訂唔到，後面全部要改。</p>
 
+${paidTable}
 ${bookSections}
 
       <p class="eyebrow" style="margin-top:30px">勾選狀態存喺呢部機，唔會同步。</p>
