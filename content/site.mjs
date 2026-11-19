@@ -60,7 +60,7 @@ export const paid = [
   ['Rita Cruise 2D1N（2 人）', 'HK$2,101.00', '已付訂金 HK$840.56'],
   ['　└ 共享 limousine 2 位單程', '（已包）', '河內 → 下龍'],
   ['　└ 稅項', 'HK$166.12', '已包'],
-  ['HK Buslines 下龍 → 沙壩（2 人）', 'HK$478.52（€55.55）', '已訂 · 11:45 → 20:15'],
+  ['HK Buslines 下龍 → 沙壩（2 人）', 'HK$478.52（€55.55）', '已付 · 11:45 → 20:15'],
 ];
 
 export const days = [
@@ -404,7 +404,7 @@ export const booking = [
     wd: 'TUE',
     title: '落船，直上沙壩',
     items: [
-      { label: '下龍 → 沙壩 HK Buslines 11:45', lead: 7, kind: 'book', note: '已訂：11 月 24 日 11:45 Tuan Chau International Port → 20:15 734 Điện Biên Phủ, Sapa。8 小時 30 分、0 轉車、Lower Single Cabin，HK$478.52／2 人（€55.55）。' },
+      { label: '下龍 → 沙壩 HK Buslines 11:45', lead: 7, kind: 'book', note: '已付：11 月 24 日 11:45 Tuan Chau International Port → 20:15 734 Điện Biên Phủ, Sapa。8 小時 30 分、0 轉車、Lower Single Cabin，HK$478.52／2 人（€55.55）。' },
       {
         label: '沙壩酒店 3 晚（鎮中心）',
         lead: 21,
