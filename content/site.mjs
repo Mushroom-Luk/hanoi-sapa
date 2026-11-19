@@ -83,6 +83,7 @@ export const days = [
       { kind: 'warn', k: '東宣日間市場去唔到', v: 'Chợ Đồng Xuân 06:00–18:00，但你 12:00 先到老城區，15:20 又要去火車街，夾唔到。夜市就係替代，星期日夜晚有。' },
       { kind: 'info', k: '老城行邊', v: '三十六行街就係咁行：Hàng Quạt → Hàng Gai（絲綢）→ Hàng Đào（布）→ Hàng Ngang → Hàng Mã（紙紮）→ Hàng Bạc（銀器）。每條街賣一種行業，迷路就係玩法。白馬廟 15 分鐘免費，時間夠先加。' },
       { kind: 'info', k: '還劍湖同木偶係隔籬', v: '劇院喺湖東北角，Cafe Đinh 二樓窗口位都係湖邊，唔使搭車。' },
+      { kind: 'info', k: '想請導遊／半日團', v: 'VietGo 河內導遊名單（按評價排）放咗喺預訂清單「01 抵達河內」。落地日約唔好早過 14:00，入境同 Grab 都會拖。' },
     ],
   },
   {
@@ -218,7 +219,7 @@ export const days = [
     n: 6,
     wd: 'FRI',
     title: '玻璃橋，然後落山',
-    place: 'Cầu Kính Rồng Mây · Thác Bạc · Sa Pa → Lào Cai',
+    place: 'Cầu Kính Rồng Mây · Thác Bạc · Sa Pa → Hà Nội',
     lead: '包車一日掃西北邊三個點，夜晚喺鎮上直接上夜車返河內。行李下晝就要執好，唔好留到最後。',
     img: 'sapa',
     facts: [
@@ -335,8 +336,45 @@ export const booking = [
     title: '抵達河內',
     items: [
       { label: '機場 → 老城區接送', lead: 2, kind: 'book', note: '比現場叫車穩陣，行李多就更值。' },
-      { label: '河內酒店 1 晚（老城區）', lead: 21, kind: 'book', note: 'La Siesta / Emerald Waters / Buffalo，見「河內 2 日」頁。' },
-      { label: '水上木偶戲 18:30（星期日）', lead: 3, kind: 'book', note: 'Thăng Long 劇院，57B Đinh Tiên Hoàng，100,000／150,000／200,000 VND，50 分鐘。18:30 同 20:00 最快滿。' },
+      {
+        label: '河內酒店 1 晚（老城區）',
+        lead: 21,
+        kind: 'book',
+        note: 'Agoda 比價：',
+        choices: [
+          {
+            name: '12A B Điện Biên Phủ',
+            href: 'https://www.agoda.com/12a-b-dien-bien-phu-hotel/hotel/hanoi-vn.html?countryId=38&finalPriceView=3&isShowMobileAppPrice=false&cid=1907301&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-11-22&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&tspTypes=4&los=1&searchrequestid=078f579f-18d8-4120-b274-467477f338c8',
+            detail: '平價細酒店 · Ba Đình · 行去老城區 25–30 分鐘，夜返叫 Grab',
+          },
+          {
+            name: 'Hanoi Esplendor Hotel & Spa',
+            href: 'https://www.agoda.com/hanoi-esplendor-hotel-and-spa/hotel/hanoi-vn.html?countryId=38&finalPriceView=3&isShowMobileAppPrice=false&cid=1907301&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-11-22&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&tspTypes=3&los=1&searchrequestid=4c3169cb-11ff-49e0-8240-01cfc66e1085',
+            detail: '老城區 · 行得到還劍湖 · 有 spa，第一晚落機住呢間最方便',
+          },
+        ],
+        url: 'https://www.agoda.com/12a-b-dien-bien-phu-hotel/hotel/hanoi-vn.html?countryId=38&finalPriceView=3&isShowMobileAppPrice=false&cid=1907301&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-11-22&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&tspTypes=4&los=1&searchrequestid=078f579f-18d8-4120-b274-467477f338c8',
+      },
+      {
+        label: '水上木偶戲 18:30（星期日）',
+        lead: 3,
+        kind: 'book',
+        note: '購票（Thăng Long 劇院，57B Đinh Tiên Hoàng）：',
+        choices: [
+          {
+            name: 'KKday 快速通行證',
+            href: 'https://www.kkday.com/zh-hk/product/129554-hanoi-water-puppet-show-express-pass-vietnam',
+            detail: '電子憑證，免排售票處；座位由劇院派，未必坐到前排',
+          },
+          {
+            name: '劇院官網',
+            href: 'https://nhahatmuaroithanglong.vn/en/ticket-book',
+            detail: '自己揀位，頭 6 排 200,000 VND',
+          },
+        ],
+        foot: '100,000／150,000／200,000 VND，50 分鐘。星期日 18:30 最滿，兩三日前就要買。',
+        url: 'https://www.kkday.com/zh-hk/product/129554-hanoi-water-puppet-show-express-pass-vietnam',
+      },
       { label: '河內導遊／半日團（可選）', lead: 3, kind: 'book', note: 'VietGo 河內導遊名單（按評價排）。落地日約唔好早過 14:00，入境同 Grab 都會拖。', url: 'https://viet-go.com/en/guides?area=1&sort=reviews&per_page=12#guides-list' },
     ],
   },
@@ -360,7 +398,31 @@ export const booking = [
     title: '落船，直上沙壩',
     items: [
       { label: 'Daiichi Travel 直達巴士 13:00', lead: 7, kind: 'book', note: '10 小時、0 轉車、US$27.23／人（約 HK$212）。13:00 嗰班 11 月 24 日未確認，訂之前喺 12go 睇實。確認係真直達，唔好訂 G8 12:30 嗰班。', url: 'https://12go.asia/en/travel/halong/sapa?date=2026-11-24' },
-      { label: '沙壩酒店 3 晚（鎮中心）', lead: 21, kind: 'book', note: '揀 Azure Sapa：4 星、早餐 06:30–09:00、全部房望 Mường Hoa 山谷。Cat Cat 係後備。', url: 'https://www.booking.com/searchresults.html?ss=Sa%20Pa&checkin=2026-11-24&checkout=2026-11-27&group_adults=2&no_rooms=1' },
+      {
+        label: '沙壩酒店 3 晚（鎮中心）',
+        lead: 21,
+        kind: 'book',
+        note: 'Agoda 比價：',
+        choices: [
+          {
+            name: "Cat Cat Galerie d'Art",
+            href: 'https://www.agoda.com/cat-cat-galerie-d-art/hotel/sapa-vn.html?countryId=38&finalPriceView=3&isShowMobileAppPrice=false&cid=1907301&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-11-24&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&tspTypes=1&los=3&searchrequestid=44a848a7-0003-492e-9d2c-f8bb2ca36ecf',
+            detail: '藝術精品 3 星 · 46 Fansipan · 350 m 到石教堂 · 陽台山景 · 早餐 buffet',
+          },
+          {
+            name: 'Azure Sapa Hotel',
+            href: 'https://www.agoda.com/azure-sapa-hotel/hotel/sapa-vn.html?countryId=38&finalPriceView=3&isShowMobileAppPrice=false&cid=1907301&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-11-24&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&los=3&searchrequestid=376310c7-eba5-4aa5-936e-2aefbf3b3447',
+            detail: '4 星 · 043 Fansipan · 400 m 到石教堂 · 全部房望 Mường Hoa 山谷 · 天台酒吧 · 早餐 06:30–09:00',
+          },
+          {
+            name: 'Tiger Sapa Hotel',
+            href: 'https://www.agoda.com/tiger-sapa-hotel/hotel/sapa-vn.html?countryId=38&finalPriceView=3&isShowMobileAppPrice=false&cid=1915566&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-11-24&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&tspTypes=7%2C1&los=3&searchrequestid=b792683b-abb3-4f98-bc75-6b2c957ffd34&ds=v7mSTXcPkbjULaWd',
+            detail: '3 星 · 022A Mường Hoa · 450 m 到石教堂 · 山景房 · 按摩 spa，12 間房細場',
+          },
+        ],
+        foot: '想文青＋早餐強 → Cat Cat；想 4 星＋景＋前台幫你訂夜車 → Azure；想平、山景、細場清靜 → Tiger。',
+        url: 'https://www.agoda.com/azure-sapa-hotel/hotel/sapa-vn.html?countryId=38&finalPriceView=3&isShowMobileAppPrice=false&cid=1907301&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-11-24&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&los=3&searchrequestid=376310c7-eba5-4aa5-936e-2aefbf3b3447',
+      },
     ],
   },
   {
@@ -376,7 +438,7 @@ export const booking = [
     wd: 'THU',
     title: '山頂與村落',
     items: [
-      { label: '番西邦纜車', lead: 0, kind: 'book', note: '唔好預訂死。當朝睇天氣先決定，大霧就改行村。去到現場或者即日網上買。全套約 1,320,000 VND（HK$405–435）。', url: 'https://www.klook.com/zh-HK/search/result/?query=Fansipan%20%E7%BA%9C%E8%BB%8A' },
+      { label: '番西邦纜車', lead: 0, kind: 'book', note: '唔好預訂死。當朝 07:30 睇天氣先買，好天就即日網上買（QR 直接入閘），大霧就改行村。門票綁日期，唔退唔改。全套約 1,320,000 VND（HK$405–435）。', url: 'https://sunworld.vn/en/fansipan' },
     ],
   },
   {
@@ -385,7 +447,7 @@ export const booking = [
     title: '包車，然後落山',
     items: [
       { label: '沙壩包車 8 小時（80 km）', lead: 1, kind: 'book', note: 'Klook HK$113 起，或者同酒店訂。講明 16:00 要返到鎮。', url: 'https://www.klook.com/zh-HK/activity/215993-custom-private-tour-sapa-day-tour-with-english-speaking-driver/' },
-      { label: '沙壩 → 河內 夜車 23:00', lead: 3, kind: 'book', note: 'Sapa Ethnic Travel Sleeper VIP 20，HK$113，翌日 05:00–05:30 到。23:20 VIP Cabin 未確認，唔好當 plan。', url: 'https://12go.asia/en/travel/sapa/hanoi?date=2026-11-27' },
+      { label: '沙壩 → 河內 夜車 23:00', lead: 3, kind: 'book', note: 'Sapa Ethnic Travel Sleeper VIP 20，HK$113，翌日 05:00–05:30 到。23:20 VIP Cabin 未確認，唔好當 plan。12Go 有時 search 會 403（顯示 0 trips），後備用 vexere.com 或者叫酒店訂。', url: 'https://12go.asia/en/travel/sapa/hanoi?date=2026-11-27' },
     ],
   },
   {
@@ -394,7 +456,10 @@ export const booking = [
     title: '河內最後一日',
     items: [
       { label: '夜車落車點 → 酒店', lead: 2, kind: 'book', note: '05:00 落車，通常喺老城區外圍。行得到就行，行李多先叫 Grab。' },
-      { label: '河內酒店 1 晚 + early check-in', lead: 21, kind: 'book', note: '訂房時註明 06:00 到，要即刻入房沖涼。' },
+      { label: '河內酒店 1 晚 + early check-in', lead: 21, kind: 'book', note: 'Agoda 比價：', choices: [
+        { name: 'PAON Boutique Hotel', href: 'https://www.agoda.com/paon-boutique-hotel/hotel/hanoi-vn.html?countryId=38&finalPriceView=3&isShowMobileAppPrice=false&cid=1907301&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&los=1&searchrequestid=d7f0fe93-fe17-472d-964b-a3ffb476b18c&checkin=2026-11-28', detail: '4 星 2026 新開 · 16 Hàng Thùng，老城區 · 行 3 分鐘到還劍湖、150 m 到木偶劇院 · 室內泳池＋spa' },
+        { name: 'Hôtel De Rond au Lac', href: 'https://www.agoda.com/de-rond-au-lac/hotel/hanoi-vn.html?countryId=38&finalPriceView=3&isShowMobileAppPrice=false&cid=1833981&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&los=1&searchrequestid=b77e8c9f-c981-44b8-a72c-f89528f4c364&ds=jZvUYmhvYCWDseUl&checkin=2026-11-28', detail: '4 星 · 5 Nguyễn Biểu，Ba Đình（近西湖）· 910 m 到胡志明陵，星期六朝早最方便；去老城區要 Grab 7 分鐘' },
+      ], foot: '訂房註明 06:00 到，要即刻入房沖涼。', url: 'https://www.agoda.com/paon-boutique-hotel/hotel/hanoi-vn.html?countryId=38&finalPriceView=3&isShowMobileAppPrice=false&cid=1907301&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&los=1&searchrequestid=d7f0fe93-fe17-472d-964b-a3ffb476b18c&checkin=2026-11-28' },
       { label: 'Fabrik 晚餐 18:00（星期六）', lead: 3, kind: 'book', note: '16 Trần Vũ, Ba Đình，11:00–22:30，星期二休。鎮國寺行完 Grab 5 分鐘到。' },
     ],
   },

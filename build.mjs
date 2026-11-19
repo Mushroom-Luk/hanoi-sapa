@@ -260,6 +260,20 @@ const urgentStrip = urgent
   .map((i) => `<div><dt data-lead="${i.lead}">${esc(LEAD(i.lead))}</dt><dd>${esc(i.label)}</dd></div>`)
   .join('\n        ');
 
+const noteHtml = (i) => {
+  const parts = [];
+  if (i.note) parts.push(esc(i.note));
+  if (i.choices && i.choices.length) {
+    parts.push(
+      i.choices
+        .map((c) => `<a href="${c.href}" target="_blank" rel="noopener">${esc(c.name)}</a> ${esc(c.detail || '')}`.trimEnd())
+        .join('<br>')
+    );
+  }
+  if (i.foot) parts.push(esc(i.foot));
+  return parts.length ? `<span class="note-txt">${parts.join('<br>')}</span>` : '';
+};
+
 const bookSections = booking
   .map((g) => {
     const rows = g.items
@@ -272,7 +286,7 @@ const bookSections = booking
           `        <li><input type="checkbox" id="${id}" data-k="${id}">` +
           `<span class="label"><span class="kind">${esc(KIND[i.kind] || '要訂')}</span>` +
           `<span class="txt">${esc(i.label)}</span>` +
-          (i.note ? `<span class="note-txt">${esc(i.note)}</span>` : '') +
+          `${noteHtml(i)}` +
           `</span>${chip}</li>`
         );
       })
