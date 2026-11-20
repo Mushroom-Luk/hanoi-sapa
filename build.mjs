@@ -94,9 +94,11 @@ const budgetSum = (() => {
   let lo = 0;
   let hi = 0;
   for (const row of trip.budget) {
-    const parts = String(row[1])
+    // 只計括號前嘅主數，括號入面係細項（例如 1,662（708＋954）），唔可以撈埋一齊計。
+    const main = String(row[1]).split(/[（(]/)[0];
+    const parts = main
       .split(/[–-]/)
-      .map((s) => Number(String(s).replace(/[^0-9]/g, '')));
+      .map((s) => Number(String(s).replace(/[^0-9.]/g, '')));
     if (!parts.length || Number.isNaN(parts[0])) continue;
     lo += parts[0];
     hi += parts.length > 1 && parts[1] ? parts[1] : parts[0];
@@ -165,7 +167,7 @@ ${risks}
           <tbody>
           ${budgetRows}
           </tbody>
-          <tfoot><tr><td>合計（未計機票）</td><td>${esc(budgetSum)}</td></tr></tfoot>
+          <tfoot><tr><td>合計（連機票）</td><td>${esc(budgetSum)}</td></tr></tfoot>
         </table>
         <p class="eyebrow" style="margin-top:14px">${esc(trip.budgetNote)}</p>
       </section>
